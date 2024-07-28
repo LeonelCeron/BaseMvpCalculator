@@ -31,11 +31,12 @@ public class OperationModel implements IOperationModel {
 
     @Override
     public void divide(int num1, int num2) {
+        //Fix operation...
         if (num2 == 0) {
+            presenter.invalidOperation();
+        } else {
             result = num1 / num2;
             presenter.showResult(Integer.toString(result));
-        } else {
-            presenter.invalidOperation();
         }
     }
 
